@@ -42,7 +42,7 @@ export default function App() {
     <Authenticator>
       {({ signOut, user }) => (
         <main>
-          <h1>My todos</h1>
+          <h1>{user?.signInDetails?.loginId} todos</h1>
           <button onClick={createTodo}>+ new</button>
           <ul>
             {todos.map((todo) => (
@@ -52,13 +52,6 @@ export default function App() {
             ))}
           </ul>
           <button onClick={signOut}>Sign out</button>
-          <div>
-            🥳 App successfully hosted. Try creating a new todo.
-            <br />
-            <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/">
-              Review next steps of this tutorial.
-            </a>
-          </div>
         </main>
       )}
     </Authenticator>
